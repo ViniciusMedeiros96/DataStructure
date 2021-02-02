@@ -1,7 +1,8 @@
 <p align="center">
-<img  src="https://i.imgur.com/d9SkrOH.gif" alt="imagem" > <br>
+<img  src="https://imgur.com/CtxSrnZ.gif" alt="imagem" > <br>
 
 # DataStructure
 
 Repositório dedicado a códigos feitos por mim no curso Engenharia de Computação durante o andamento da disciplina Estrutura de dados ofertado pelo IFPB - Campus Campina Grande.
 </p>
+
