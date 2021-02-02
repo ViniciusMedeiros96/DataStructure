@@ -1,5 +1,5 @@
 <p align="center">
-<img  src="https://i.imgur.com/cubyqZ6.gif" alt="imagem" > <br>
+<img  src="https://i.imgur.com/fzqjuPI.png" alt="imagem"> <br>
  
  # DataStructure
   
