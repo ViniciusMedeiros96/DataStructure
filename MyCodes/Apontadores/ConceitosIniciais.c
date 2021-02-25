@@ -14,6 +14,8 @@ int main (void){
     printf("%d\n", *px);
     printf("%p\n", px);
 
+    
+
 
     return 0;
 }
