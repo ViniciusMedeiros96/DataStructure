@@ -3,11 +3,13 @@
 
 int main (void){
 
-    int x1,x2,delta,b,a,c,raiz_delta;
+    int x1,x2,b,a,c;
+    double raiz_delta,delta;
 
     scanf("%d%d%d",&a,&b,&c);
     delta = ((b*b) - 4 * a * c);
-    raiz_delta = sqrt(delta);
+    
+    raiz_delta =(pow(delta,0.5));
 
 
     if (delta<0){

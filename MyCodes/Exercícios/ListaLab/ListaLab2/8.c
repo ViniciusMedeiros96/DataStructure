@@ -14,7 +14,6 @@ int main(void){
             }
         }
         printf("%d\n",soma);
-
     }
     printf("%d\n",soma);
 
