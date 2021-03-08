@@ -8,7 +8,7 @@ int main(void){
     
     for(c = 1; c <= valor; c++){
         for(v = 1; v <= valor; v++){
-            printf("%d",c);
+            printf("%d ",v);
             
         }
         printf("\n");
