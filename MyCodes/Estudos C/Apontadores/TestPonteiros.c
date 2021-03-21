@@ -5,7 +5,7 @@ int main (void){
     char vetor [] = "Cesar";
     char *pv = vetor;
     pv[2] = 'Z';
-    *(pv+1) = 'R';
+    *(pv+1) = 'RR';
     printf("%c\n", *(pv+2));
     printf("%c\n", pv[1]);
     
