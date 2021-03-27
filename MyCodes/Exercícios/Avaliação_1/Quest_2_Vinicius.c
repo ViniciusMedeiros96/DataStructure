@@ -41,10 +41,8 @@ int contem(Circulo* circulo1, Circulo* circulo2){
 
     if(d + circulo2->raio <= circulo1->raio)
         return 1;
-
     else
         return 0;
-
 }
 
 int main(void){
