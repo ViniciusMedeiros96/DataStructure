@@ -2,19 +2,17 @@
 
 int main (void){
 
-    int *apontInt;
-    float *apontFloat, salario;
-    double *d = NULL;
-    char *str = "Apontadores em C";
+    int a=5,b=6;
 
-    int x = 10;
-    int *px;
-    px = &x;
-    
-    printf("%d\n", *px);
-    printf("%p\n", px);
+    int *x, *y, *z;
 
+    x = &a;
+    y = x;
     
+    printf("%d\n", *x);
+    printf("%d\n", *y);
+
+
 
 
     return 0;
