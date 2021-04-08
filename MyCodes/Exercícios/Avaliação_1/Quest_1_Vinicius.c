@@ -40,7 +40,7 @@ double desviopadrao(double *v, int n){
 
     }
 
-    //pegando o resultado e subtraindo pelo número de valores
+    //pegando o resultado e divindo pelo número de valores
     double desvio = s / (double) n; 
 
     //tirando a raiz quadrada do resultado e obetendo o tão sonhado desvio padrão
