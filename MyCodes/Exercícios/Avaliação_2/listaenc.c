@@ -192,7 +192,7 @@ int removerElemento( TListaEnc* lista, int posicao, int *dado ){
     else anterior->prox = aux->prox;
 
     // lembre-se de que, neste TAD, "remover" implica em desalocar memoria, tá?
-    free( aux );
+    free(aux);
     return 1;
 }
 

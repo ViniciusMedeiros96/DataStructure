@@ -13,7 +13,7 @@ typedef struct lista{
   No *inicio;
 }TListaAluno;
 
-void libera_lista(TListaAluno *la); // Função para liberar a lista OK
+void libera_lista(TListaAluno *la); // Função para liberar a lista CHECK
 
 void cria(TListaAluno *la); // Cria a lista vazia CHECK
 
@@ -27,10 +27,12 @@ int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al); // Pesquisa aluno pela 
 
 int insereInicio(TListaAluno *la, struct aluno al); // Insere aluno no início da lista CHECK
 
-int insereFinal(TListaAluno *la, struct aluno al); // Insere aluno no final da lista NAO OK
+int insereFinal(TListaAluno *la, struct aluno al); // Insere aluno no final da lista OK
 
-int inserePos(TListaAluno *la, int pos, struct aluno al);// Insere o aluno dada a posição NAO OK
+int inserePos(TListaAluno *la, int pos, struct aluno al);// Insere o aluno dada a posição CHECK
 
 int removeAlunoMat(TListaAluno *la, int mat); // Remove aluno da lista passando a matricula
+
+int removePos(TListaAluno *la, int pos, TAluno *dado); // Remove aluno pela posição CHECK
 
 void exibirAlunos(TListaAluno *la); // Exibe a Lista de alunos CHECK
