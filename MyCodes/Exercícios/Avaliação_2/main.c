@@ -48,9 +48,9 @@ int main(void){
   
   printf("Buscando o aluno da posição 1: %d\n", buscaAlunoPos(&Lista, 1, &AlunoX)); //Pesquisa aluno pela pela posição
 
-  printf("Inserindo aluno pela posição 2: %d\n", inserePos(&Lista, 2, AlunoY)); //Insere aluno pela posição
+  printf("Inserindo aluno na posição 2: %d\n", inserePos(&Lista, 2, AlunoY)); //Insere aluno pela posição
 
-  printf("Inserindo aluno pela posição 3: %d\n", inserePos(&Lista, 3, AlunoB));
+  printf("Inserindo aluno na posição 3: %d\n", inserePos(&Lista, 3, AlunoB));
 
   printf("Inserindo aluno no final da lista: %d\n", insereFinal(&Lista, AlunoZ)); //Inserir aluno no final da lista
   
@@ -59,6 +59,8 @@ int main(void){
   printf("Tamanho da lista: %d\n", tamanho(&Lista)); //Tamanho da lista
 
   printf("Removendo o aluno da posição 1... %d\n", removePos(&Lista, 1, &AlunoX)); //Remove aluno pela posição
+
+  // printf("%d\n", removeAlunoMat(&Lista, 666215300)); //Remove aluno pela matrícula //
 
   exibirAlunos(&Lista); //Imprime a lista
 

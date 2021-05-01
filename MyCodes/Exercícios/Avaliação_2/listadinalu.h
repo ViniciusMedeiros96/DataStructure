@@ -27,7 +27,7 @@ int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al); // Pesquisa aluno pela 
 
 int insereInicio(TListaAluno *la, struct aluno al); // Insere aluno no início da lista CHECK
 
-int insereFinal(TListaAluno *la, struct aluno al); // Insere aluno no final da lista OK
+int insereFinal(TListaAluno *la, struct aluno al); // Insere aluno no final da lista CHECK
 
 int inserePos(TListaAluno *la, int pos, struct aluno al);// Insere o aluno dada a posição CHECK
 
