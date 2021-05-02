@@ -31,7 +31,7 @@ int insereFinal(TListaAluno *la, struct aluno al); // Insere aluno no final da l
 
 int inserePos(TListaAluno *la, int pos, struct aluno al);// Insere o aluno dada a posição CHECK
 
-int removeAlunoMat(TListaAluno *la, int mat); // Remove aluno da lista passando a matricula
+int removeAlunoMat(TListaAluno *la, int mat); // Remove aluno da lista passando a matricula CHECK
 
 int removePos(TListaAluno *la, int pos, TAluno *dado); // Remove aluno pela posição CHECK
 

@@ -24,13 +24,34 @@ int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al){ // Pesquisa aluno pela 
     if ( vazia( la ) || pos <= 0 ||
 					pos > tamanho( la ) ) return 0;
 
-    while ( ( aux != NULL ) && ( posicaoAtual < pos ) ){
+    while(( aux != NULL) && ( posicaoAtual < pos)){
     	aux = (aux)->prox;
         posicaoAtual++;
     }
     *al = (aux)->dado;
    	return 1;
-} 
+}
+
+int buscaPosMat(TListaAluno *la, int mat, int *pos){
+  if(vazia(la)) return 0;
+  No* aux = NULL;
+  aux = la -> inicio;
+  int cont = 0;
+
+  while((aux->dado.matricula != mat) && (aux != NULL)){
+    aux = aux -> prox;
+    cont++;
+    printf("%d\n", cont);
+  }
+  if(aux == NULL){
+    return 0;
+  }
+  else{
+    printf("ok");
+    *pos = cont;
+    return 1;
+  }
+}
 
 int insereInicio(TListaAluno *la, struct aluno al){ //Insere aluno no início da lista
   if(la == NULL) return 0;
@@ -95,29 +116,27 @@ int inserePos(TListaAluno *la, int pos, struct aluno al){ // Função para inser
   return 1;
 }
 
-// int removeAlunoMat(TListaAluno *la, int mat){ // Remover aluno pela matrícula
+ int removeAlunoMat(TListaAluno *la, int mat){ // Remover aluno pela matrícula
+   No* aux = NULL;
+   No* anterior = NULL;
 
-//   No* aux = NULL;
-//   No* anterior = NULL;
-//   int contador = 1;
-
-//   if(vazia(la)) return 0;
-
-//   aux = la -> inicio ;
-
-//   while((contador <= mat - 1) && (aux != NULL)){
-//     anterior = aux;
-//       aux = aux->prox;
-//       contador++;
-//   }
-
-//   // se era o primeiro nó da lista...
-//   if( mat == 1 ) la -> inicio = aux->prox;
-//   else anterior -> prox = aux -> prox;
-
-//   free(aux);
-//   return 1;
-// }
+   if(vazia(la)) return 0;
+   aux = la -> inicio ;
+   while((aux->dado.matricula != mat) && (aux != NULL)){
+    anterior = aux;
+    aux = aux->prox;
+   }
+   
+   if(aux == NULL) return 0;
+   if(aux == la -> inicio){
+     la -> inicio = aux -> prox;
+   }
+   else{
+     anterior -> prox = aux -> prox;
+   }
+   free(aux);
+   return 1;
+ }
 
 int removePos(TListaAluno *la, int pos, TAluno *dado){ //Remove aluno pela posição
 

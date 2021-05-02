@@ -39,6 +39,7 @@ int main(void){
 
   TListaAluno Lista;
 
+  int pos;
 
   cria(&Lista); //Cria lista
 
@@ -58,9 +59,19 @@ int main(void){
 
   printf("Tamanho da lista: %d\n", tamanho(&Lista)); //Tamanho da lista
 
+  if(buscaPosMat(&Lista, 66621533, &pos)){ //Buscando aluno pela matrícula
+    printf("Posição do aluno na lista: %d\n", pos);
+  }
+  else{
+    printf("Aluno não encontrado.");
+  }
+
   printf("Removendo o aluno da posição 1... %d\n", removePos(&Lista, 1, &AlunoX)); //Remove aluno pela posição
 
-  // printf("%d\n", removeAlunoMat(&Lista, 666215300)); //Remove aluno pela matrícula //
+  printf("Removendo aluno pela matrícula %d\n", removeAlunoMat(&Lista, 666215300)); //Remove aluno pela matrícula
+
+  
+
 
   exibirAlunos(&Lista); //Imprime a lista
 
