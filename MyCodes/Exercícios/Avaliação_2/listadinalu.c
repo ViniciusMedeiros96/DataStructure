@@ -21,10 +21,10 @@ int tamanho( TListaAluno *la ){ //Verificar o tamanho da lista
 int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al){ // Pesquisa aluno pela pela posição
 	int posicaoAtual = 1;
     No* aux = la->inicio;
-    if ( vazia( la ) || pos <= 0 ||
+    if (vazia(la) || pos <= 0 ||
 					pos > tamanho( la ) ) return 0;
 
-    while(( aux != NULL) && ( posicaoAtual < pos)){
+    while(( aux != NULL) && (posicaoAtual < pos)){
     	aux = (aux)->prox;
         posicaoAtual++;
     }
@@ -32,23 +32,40 @@ int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al){ // Pesquisa aluno pela 
    	return 1;
 }
 
-int buscaPosMat(TListaAluno *la, int mat, int *pos){
+int buscaPosMat(TListaAluno *la, int mat, int *pos){ // Pesquisa aluno pela matrícula
   if(vazia(la)) return 0;
   No* aux = NULL;
   aux = la -> inicio;
   int cont = 0;
 
-  while((aux->dado.matricula != mat) && (aux != NULL)){
+  while((aux != NULL) && (aux->dado.matricula != mat)){
     aux = aux -> prox;
     cont++;
-    printf("%d\n", cont);
   }
+
   if(aux == NULL){
     return 0;
   }
   else{
-    printf("ok");
     *pos = cont;
+    return 1;
+  }
+}
+
+int buscaAlunoMatNome(TListaAluno *la, int mat){ // Pesquisa aluno pela matrícula ou nome
+  if(vazia(la)) return 0;
+  No* aux = NULL;
+  aux = la -> inicio;
+
+  while((aux != NULL) && (aux->dado.matricula != mat)){
+    aux = aux -> prox;
+  }
+
+  if(aux == NULL){
+    return 0;
+  }
+  else{
+    printf("Nome: %s\nMatrícula: %d\nNota1: %.2f\nNota2: %.2f\n\n", aux->dado.nome,aux->dado.matricula, aux->dado.nota1, aux->dado.nota2);
     return 1;
   }
 }

@@ -55,25 +55,48 @@ int main(void){
 
   printf("Inserindo aluno no final da lista: %d\n", insereFinal(&Lista, AlunoZ)); //Inserir aluno no final da lista
   
+  printf("\nExibindo todos os alunos:\n");
+  printf("\n==============================================================\n");
   exibirAlunos(&Lista); //Imprime a lista
+  printf("==============================================================\n");
 
-  printf("Tamanho da lista: %d\n", tamanho(&Lista)); //Tamanho da lista
+  printf("\nTamanho da lista: %d\n", tamanho(&Lista)); //Tamanho da lista
 
-  if(buscaPosMat(&Lista, 66621533, &pos)){ //Buscando aluno pela matrícula
-    printf("Posição do aluno na lista: %d\n", pos);
+  if(buscaPosMat(&Lista, 666215333, &pos)){ //Buscando aluno pela matrícula
+    printf("Posição do aluno 666215333 na lista: %d\n", pos);
   }
   else{
-    printf("Aluno não encontrado.");
+    printf("Aluno não encontrado.\n");
+  }
+
+  if(buscaPosMat(&Lista, 66621533, &pos)){ //Buscando aluno pela matrícula
+    printf("Posição do aluno com a matrícula 66215333 na lista: %d\n", pos);
+  }
+  else{
+    printf("ERRO, POIS O ALUNO DA MATRÍCULA ESPECIFICADA NÃO EXISTE\n");
   }
 
   printf("Removendo o aluno da posição 1... %d\n", removePos(&Lista, 1, &AlunoX)); //Remove aluno pela posição
 
   printf("Removendo aluno pela matrícula %d\n", removeAlunoMat(&Lista, 666215300)); //Remove aluno pela matrícula
 
-  
+  printf("\nExibindo a lista de alunos após algumas modificações:\n");
 
-
+  printf("\n==============================================================\n");
   exibirAlunos(&Lista); //Imprime a lista
+  printf("==============================================================\n");
+
+  printf("\nExibindo os dados do aluno da matrícula 666215335:\n");
+
+  if(!buscaAlunoMatNome(&Lista, 666215335)){
+    printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
+  }
+  
+  printf("\nExibindo os dados do aluno da matrícula 666215333:\n");
+
+  if(!buscaAlunoMatNome(&Lista, 66621515)){
+    printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
+  }
 
   libera_lista(&Lista); //Libera lista
 
