@@ -25,7 +25,7 @@ int buscaPosMat(TListaAluno *la, int mat, int *pos); // Pesquisa posição pela 
 
 int buscaAlunoPos(TListaAluno *la, int pos, TAluno *al); // Pesquisa aluno pela pela posição CHECK
 
-int buscaAlunoMatNome(TListaAluno *la, int mat); // Pesquisa aluno pela matricula ou nome
+int buscaAlunoMatNome(TListaAluno *la, int escolha, char name[30], int mat); // Pesquisa aluno pela matricula ou nome
 
 int insereInicio(TListaAluno *la, struct aluno al); // Insere aluno no início da lista CHECK
 

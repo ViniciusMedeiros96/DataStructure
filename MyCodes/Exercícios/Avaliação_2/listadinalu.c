@@ -1,6 +1,7 @@
 #include "listadinalu.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void cria(TListaAluno *la){ la->inicio = NULL; } //Criando lista vazia
 
@@ -52,22 +53,40 @@ int buscaPosMat(TListaAluno *la, int mat, int *pos){ // Pesquisa aluno pela matr
   }
 }
 
-int buscaAlunoMatNome(TListaAluno *la, int mat){ // Pesquisa aluno pela matrícula ou nome
+int buscaAlunoMatNome(TListaAluno *la, int escolha, char name[30], int mat){ // Pesquisa aluno pela matrícula ou nome
   if(vazia(la)) return 0;
+
   No* aux = NULL;
-  aux = la -> inicio;
 
-  while((aux != NULL) && (aux->dado.matricula != mat)){
-    aux = aux -> prox;
-  }
+  if(escolha == 0){
+    aux = la -> inicio;
 
-  if(aux == NULL){
-    return 0;
+    char Nome[30];
+    strcpy(Nome, name);
+
+    int encontrouAluno = 0;
+
+    while(aux != NULL){
+      if(strcmp(Nome, aux -> dado.nome) == 0){
+        printf("Nome: %s\nMatrícula: %d\nNota1: %.2f\nNota2: %.2f\n\n", aux->dado.nome,aux->dado.matricula, aux->dado.nota1, aux->dado.nota2);
+        encontrouAluno = 1;
+      }
+      aux = aux -> prox;
+    }
+    if(encontrouAluno == 0) return 0;
   }
   else{
+    aux = la -> inicio;
+    while((aux != NULL) && (aux->dado.matricula != mat)){
+      aux = aux -> prox;
+    }
+    if(aux != NULL){
     printf("Nome: %s\nMatrícula: %d\nNota1: %.2f\nNota2: %.2f\n\n", aux->dado.nome,aux->dado.matricula, aux->dado.nota1, aux->dado.nota2);
-    return 1;
+    }
+    else
+      return 0;
   }
+  return 1;
 }
 
 int insereInicio(TListaAluno *la, struct aluno al){ //Insere aluno no início da lista

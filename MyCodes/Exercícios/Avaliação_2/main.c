@@ -6,7 +6,7 @@ int main(void){
   TAluno AlunoX;
   AlunoX.matricula = 666215334;
 
-  strcpy(AlunoX.nome, "João Victor Negreiro da Silva");
+  strcpy(AlunoX.nome, "Joao Vitor Negresco da Silva");
 
   AlunoX.nota1 = 10.0;
   AlunoX.nota2 = 9.73;
@@ -15,7 +15,7 @@ int main(void){
   TAluno AlunoY;
   AlunoY.matricula = 666215333;
 
-  strcpy(AlunoY.nome, "Lucas Bivar Fonseca Tavares");
+  strcpy(AlunoY.nome, "Lucas Bivar Fonseca Defolt");
 
   AlunoY.nota1 = 8;
   AlunoY.nota2 = 9.73;
@@ -24,7 +24,7 @@ int main(void){
   TAluno AlunoZ;
   AlunoZ.matricula = 666215335;
   
-  strcpy(AlunoZ.nome, "Ribamar Ribeiro Riquelme Rivaldo");
+  strcpy(AlunoZ.nome, "Flavia Default da Silva Negresco");
 
   AlunoZ.nota1 = 7;
   AlunoZ.nota2 = 5;
@@ -32,7 +32,7 @@ int main(void){
   TAluno AlunoB;
   AlunoB.matricula = 666215300;
   
-  strcpy(AlunoB.nome, "Jorge Richard Bivar");
+  strcpy(AlunoB.nome, "Jorge Richard Patrícia Teixeira");
 
   AlunoB.nota1 = 8;
   AlunoB.nota2 = 9;
@@ -86,22 +86,17 @@ int main(void){
   exibirAlunos(&Lista); //Imprime a lista
   printf("==============================================================\n");
 
-  printf("\nExibindo os dados do aluno da matrícula 666215335:\n");
+  printf("\nExibindo os dados do aluno Lucas Bivar Fonseca Defolt:\n");
 
-  if(!buscaAlunoMatNome(&Lista, 666215335)){
-    printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
-  }
-  
-  printf("\nExibindo os dados do aluno da matrícula 666215333:\n");
-
-  if(!buscaAlunoMatNome(&Lista, 66621515)){
-    printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
-  }
+ if(!buscaAlunoMatNome(&Lista, 0, "Lucas Bivar Fonseca Defolt", 1)){
+   printf("Aluno especificado não encontrado!, digite um nome válido.\n");
+ }
+ printf("\nExibindo os dados do aluno da matrícula 666215335:\n");
+ if(!buscaAlunoMatNome(&Lista, 1, "", 666215335)){
+   printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
+ }
 
   libera_lista(&Lista); //Libera lista
-
-
-
 
   return 0;
 }
