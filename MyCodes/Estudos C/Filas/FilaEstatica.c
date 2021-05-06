@@ -17,7 +17,6 @@
   Também existe o caso onde a insrção é feita em uma fila que está vazia
 
   Cuidado: não se pode inserir numa fila cheia
-
 */
 
 struct fila{
@@ -79,22 +78,6 @@ int busca_fila(Fila *fi, Aluno *al){ /* Busca o primeiro elemento da fila (Somen
   *al = fi -> dados[fi -> inicio]; /* Recebe os dados da fila que está no início */
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void libera_fila(Fila *fi){ /* Liberando a fila */
   free(fi);
