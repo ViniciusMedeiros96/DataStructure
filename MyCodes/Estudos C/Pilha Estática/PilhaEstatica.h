@@ -18,14 +18,10 @@ int pilha_cheia(Pilha *pi); /* Verificar se a pilha está cheia */
 
 int pilha_vazia(Pilha *pi); /* Verifica se a pilha está vazia */
 
+int insere_pilha(Pilha *pi, Aluno al); /* Inserir elementos na pilha */
 
+int remove_pilha(Pilha *pi); /* Remover elemento da pilha */
 
-
-
-
-
-
-
-
+int busca_topo_pilha(Pilha *pi, Aluno *al); /* Consulta o elemento do topo */
 
 void libera_pilha(Pilha *pi); /* Libera a pilha */

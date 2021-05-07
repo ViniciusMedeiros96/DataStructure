@@ -7,6 +7,13 @@
 
   Tipo de "Pilha" onde o sucessor de um elemento ocupa a 
   posição física seguinte do mesmo (uso de "array")
+
+  Em uma pilha a inserção e remoção é sempre no seu início
+
+  Cuidado: não se pode inserir numa pilha cheia
+
+  Em uma pilha a consulta se dá apenas ao elemento
+  que está no seu início
 */
 
 struct pilha{
@@ -36,26 +43,35 @@ int pilha_cheia(Pilha *pi){
     return 0;
 }
 
+int pilha_vazia(Pilha *pi){
+  if(pi == NULL) return -1;
+  return (pi -> quantidade == 0);
+}
 
+int insere_pilha(Pilha *pi, Aluno al){ /* Inserir no topo da pilha (sempre) */
+  if(pi == NULL) return 0;
+  if(pilha_cheia(pi)) return 0;
+  
+  pi -> dados[pi-> quantidade] = al; /* Coloca o dado a ser inserido na posição quantidade */
+  pi -> quantidade++; /* Incrementa a quantidade de elementos para o campo quantidade */
+  return 1;
+}
 
+int remove_pilha(Pilha *pi){ /* Remove o elemento do topo da pilha */
+  if((pi == NULL) || (pi -> quantidade == 0))
+    return 0;
+  pi -> quantidade--; /* Diminui um elemento da pilha */
+  return 1;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int busca_topo_pilha(Pilha *pi, Aluno *al){
+  if((pi == NULL) || (pi -> quantidade == 0))
+    return 0;
+  *al = pi -> dados[pi -> quantidade - 1]; 
+  /* No conteúdo da variável *al irá copiar o vetor dados na 
+  posição quantidade -1 (último elemento inserido) */
+  return 1;
+}
 
 void libera_pilha(Pilha *pi){
   free(pi);
