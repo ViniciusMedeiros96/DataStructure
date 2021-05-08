@@ -5,7 +5,6 @@
 
 void cria(TListaAluno *la){ la->inicio = NULL; } //Criando lista vazia
 
-
 int vazia(TListaAluno *la){ //Verificar se a lista está vazia
   return la->inicio == NULL; }
 

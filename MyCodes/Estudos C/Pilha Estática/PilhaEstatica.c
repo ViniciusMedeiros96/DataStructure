@@ -70,6 +70,7 @@ int busca_topo_pilha(Pilha *pi, Aluno *al){
   *al = pi -> dados[pi -> quantidade - 1]; 
   /* No conteúdo da variável *al irá copiar o vetor dados na 
   posição quantidade -1 (último elemento inserido) */
+  printf("%d\n%s\n%lf\n%lf\n", al->matricula, al->nome, al->n1, al->n2);
   return 1;
 }
 

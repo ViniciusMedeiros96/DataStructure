@@ -90,11 +90,11 @@ int main(void){
 
  if(!buscaAlunoMatNome(&Lista, 0, "Lucas Bivar Fonseca Defolt", 1)){
    printf("Aluno especificado não encontrado!, digite um nome válido.\n");
- }
+  }
  printf("\nExibindo os dados do aluno da matrícula 666215335:\n");
  if(!buscaAlunoMatNome(&Lista, 1, "", 666215335)){
    printf("Aluno especificado não encontrado!, digite uma matricula válida.\n");
- }
+  }
 
   libera_lista(&Lista); //Libera lista
 
