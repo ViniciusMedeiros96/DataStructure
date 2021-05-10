@@ -54,9 +54,9 @@ int elementoFrente( TFilaSeqCirc* fila, int *valor ){
 /* Enfileirar um elemento na fila 
  * Parâmetros: a fila passada por referência e um elemento qualquer
  */
-int enfileira( TFilaSeqCirc* fila, int elemento ){
+int enfileira(Fila *fi, int elemento ){
 	// se fila está cheia
-	if ( filaCheia( fila ) ) return 0;
+	if ( filaCheia(fi) ) return 0;
 	
 	(fila->tam)++;
 	fila->final = (fila->final + 1) % MAX;
@@ -79,13 +79,21 @@ int desenfileira ( TFilaSeqCirc* fila, int* valor ) {
 /* Imprimir o contéudo da fila sequencial circular
  * Parâmetros: a fila (uma struct) passada por referência
  */
-void imprimir( TFilaSeqCirc* fila ) {
+void imprimir( TFilaSeqCirc* fi) {
     printf("\nFila=[ ");
 
 	// varrendo todos os elementos
-	for ( int i = 1, aux = fila->frente;
-	                  i <= fila->tam; i++, aux = (aux + 1) % MAX )
-		printf( "%d ", fila->elementos[ aux ] );
+	for ( int i = 1, aux = fi->frente;
+		i <= fi-> tam; i++, aux = (aux + 1) % MAX )
+		printf( "%d ", fi -> );
 
     printf( "]" );
+
+			printf( "\nAlunos:\n\n");
+  No* atual = la->inicio;
+	while(atual){
+    
+	  printf("Nome: %s\nMatrícula: %d\nNota1: %.2f\nNota2: %.2f\n\n", atual->dado.nome, atual->dado.matricula, atual->dado.nota1, atual->dado.nota2 );
+    atual = atual->prox;
+  }
 }

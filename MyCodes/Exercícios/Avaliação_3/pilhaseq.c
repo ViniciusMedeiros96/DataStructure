@@ -55,8 +55,8 @@ int elementoTopo( TPilha* pilha, int *dado ){
 int empilhar( TPilha* pilha, int elemento ){
 	// a pilha está cheia?
     if ( pilhaCheia( pilha ) ) return 0;
-
-	pilha->elementos[ ++pilha->topo ] = elemento;
+	pilha->topo++;
+	pilha->elementos[ pilha->topo ] = elemento;
     return 1;
 }
 
