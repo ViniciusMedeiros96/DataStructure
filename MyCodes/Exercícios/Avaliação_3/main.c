@@ -10,7 +10,7 @@ int main(void){
   Aluno AlunoX;
   AlunoX.matricula = 1212;
 
-  strcpy(AlunoX.nome, "Junior Fabian Silva");
+  strcpy(AlunoX.nome, "Thales Luiz Amaly");
 
   AlunoX.n1 = 10.0;
   AlunoX.n2 = 9.73;
