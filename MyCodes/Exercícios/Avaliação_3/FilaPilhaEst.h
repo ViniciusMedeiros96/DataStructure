@@ -51,3 +51,5 @@ int desempilhar(Pilha *pi, Aluno *al); /* Remover elemento no topo da pilha */
 void imprimir_pilha(Pilha *pi); /* Exibir elementos */
 
 void libera_pilha(Pilha *pi); /* Libera a pilha */
+
+int inverter_fila(Fila *fi); /* Função para inverter a fila */

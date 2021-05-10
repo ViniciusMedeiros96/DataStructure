@@ -46,7 +46,7 @@ int enfileirar(Fila *fi, Aluno *al){
 }
 
 int desenfileirar (Fila *fi, Aluno *al){
-  if (!busca_fila(fi, al)) return 0;
+  *al = fi -> elementos[fi->inicio];
 
 	(fi->quantidade)--;
 	fi->inicio = (fi->inicio + 1) % MAX;
@@ -97,8 +97,8 @@ int busca_topo_pilha(Pilha *pi, Aluno *al){
 
 int empilhar(Pilha *pi, Aluno *al){
   if (pilha_cheia(pi)) return 0;
-	pi -> topo++;
 	pi -> elementos[pi -> topo] = *al;
+	pi -> topo++;
     return 1;
 }
 
@@ -111,5 +111,23 @@ int desempilhar(Pilha *pi, Aluno *al){
 
 void libera_pilha(Pilha *pi){
   free(pi);
+}
+
+int inverter_fila(Fila *fi){
+  
+  Aluno aluno;
+  Pilha *pi=(Pilha*) malloc(sizeof(Pilha));
+
+  cria_pilha(pi);
+  while(!fila_vazia(fi)){
+    desenfileirar(fi, &aluno);
+    empilhar(pi, &aluno);
+  }
+  while(!pilha_vazia(pi)){
+    desempilhar(pi, &aluno);
+    enfileirar(fi, &aluno);
+  }
+
+  return 1;
 }
 
