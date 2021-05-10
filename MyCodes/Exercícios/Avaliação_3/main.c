@@ -65,14 +65,12 @@ int main(void){
   enfileirar(&fi, &AlunoV);
 
   imprimir_fila(&fi);
-  printf("IMPRIMIU BUCETA\n");
+
+  printf("INVERTENDO A ORDEM DOS ELEMENTOS:\n\n");
 
   inverter_fila(&fi);
   
-  printf("FLAVINHA\n");
-
   imprimir_fila(&fi);
-  printf("FLAVINHAAAAAAAAAAAAA\n");
 
   return 0;
 }

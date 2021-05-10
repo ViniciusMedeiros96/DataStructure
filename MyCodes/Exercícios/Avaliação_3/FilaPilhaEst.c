@@ -68,8 +68,10 @@ void libera_fila(Fila *fi){ /* Liberando a fila */
 }
 
 int cria_pilha(Pilha *pi){ /* Criando um ponteiro e alocando uma quantidade de memória pra ele */
-  if(pi != NULL)
+  if(pi != NULL){
     pi -> quantidade = 0; /* Colocando o valor de 0 para quantidade */
+    pi -> topo = 0;
+  }
   return 1; /* Retornando o ponteiro alocado */
 }
 
@@ -99,18 +101,29 @@ int empilhar(Pilha *pi, Aluno *al){
   if (pilha_cheia(pi)) return 0;
 	pi -> elementos[pi -> topo] = *al;
 	pi -> topo++;
+  pi -> quantidade++;
     return 1;
 }
 
 int desempilhar(Pilha *pi, Aluno *al){
   if (pilha_vazia(pi)) return 0;
 
-	*al = pi -> elementos[pi -> topo--];
+	*al = pi -> elementos[--pi -> topo];
+  pi -> quantidade--;
     return 1;
 }
 
 void libera_pilha(Pilha *pi){
   free(pi);
+}
+
+void imprimir_pilha(Pilha *pi){
+  for ( int i = 0; i < pi->topo ; i++){
+      printf("Nome: %s\n", pi->elementos[i].nome);
+      printf("Matricula: %d\n", pi->elementos[i].matricula);
+      printf("Nota 1: %.2lf\n", pi->elementos[i].n1);
+      printf("Nota 2: %.2lf\n\n", pi->elementos[i].n2);
+	}
 }
 
 int inverter_fila(Fila *fi){
@@ -127,7 +140,5 @@ int inverter_fila(Fila *fi){
     desempilhar(pi, &aluno);
     enfileirar(fi, &aluno);
   }
-
   return 1;
 }
-
