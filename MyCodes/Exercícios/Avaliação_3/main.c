@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "FilaPilhaEst.h"
+#include "FilaPilhaEst_1.h"
 #include <string.h>
 
 int main(void){
@@ -8,9 +8,9 @@ int main(void){
   /* Aluno 1 */
   
   Aluno AlunoX;
-  AlunoX.matricula = 1212;
+  AlunoX.matricula = 1111;
 
-  strcpy(AlunoX.nome, "Thales Luiz Amaly");
+  strcpy(AlunoX.nome, "Arnaldo Cesar Coelho");
 
   AlunoX.n1 = 10.0;
   AlunoX.n2 = 9.73;
@@ -18,9 +18,9 @@ int main(void){
   /* Aluno 2 */
 
   Aluno AlunoY;
-  AlunoY.matricula = 1213;
+  AlunoY.matricula = 2222;
 
-  strcpy(AlunoY.nome, "Vinicius Medeiros Arial");
+  strcpy(AlunoY.nome, "Balotelli Soares Muniz");
 
   AlunoY.n1 = 8;
   AlunoY.n2 = 9.73;
@@ -28,9 +28,9 @@ int main(void){
   /* Aluno 3 */
 
   Aluno AlunoZ;
-  AlunoZ.matricula = 1214;
+  AlunoZ.matricula = 3333;
 
-  strcpy(AlunoZ.nome, "Neymar Silva Messi");
+  strcpy(AlunoZ.nome, "Cristiano Ronaldo Silva");
 
   AlunoZ.n1 = 7;
   AlunoZ.n2 = 5;
@@ -38,9 +38,9 @@ int main(void){
   /* Aluno 4 */
 
   Aluno AlunoB;
-  AlunoB.matricula = 1215;
+  AlunoB.matricula = 4444;
 
-  strcpy(AlunoB.nome, "Pedro Silva Disney");
+  strcpy(AlunoB.nome, "Diego Maradona Juarez");
 
   AlunoB.n1 = 8;
   AlunoB.n2 = 9;
@@ -48,28 +48,32 @@ int main(void){
   /* Aluno 5 */
 
   Aluno AlunoV;
-  AlunoV.matricula = 1216;
+  AlunoV.matricula = 5555;
 
-  strcpy(AlunoV.nome, "Heitor Brunini For");
+  strcpy(AlunoV.nome, "Eduardo Sanchez Souza");
 
   AlunoV.n1 = 5;
   AlunoV.n2 = 10;
 
-
+  /* Criando a fila vazia */
   cria_fila(&fi);
 
+ /* Enfileirando os elementos */
   enfileirar(&fi, &AlunoX);
   enfileirar(&fi, &AlunoY);
   enfileirar(&fi, &AlunoZ);
   enfileirar(&fi, &AlunoB);
   enfileirar(&fi, &AlunoV);
 
+  /* Exibindo a fila */
   imprimir_fila(&fi);
 
   printf("INVERTENDO A ORDEM DOS ELEMENTOS:\n\n");
 
+  /* Invertendo a fila com a função */
   inverter_fila(&fi);
   
+  /* Exibindo a fila com os elementos invertidos */
   imprimir_fila(&fi);
 
   return 0;

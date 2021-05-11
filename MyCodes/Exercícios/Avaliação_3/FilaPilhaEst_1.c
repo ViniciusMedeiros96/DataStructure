@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "FilaPilhaEst.h"
+#include "FilaPilhaEst_1.h"
 
 /* Implementação das funções */
 
